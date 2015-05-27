@@ -1,0 +1,75 @@
+
+
+
+/* Home-page */
+
+#hero {
+	display:none;
+}
+
+#featured .post .feature figure.grid_8, #featured .post section.grid_4 {
+	width:100%;
+}
+
+#featured .container_12 .grid_4{
+	width:100%!important;
+}
+
+.activiteiten, #deelnemers, #organisatie {
+	display:none;
+}
+
+
+
+
+/* Footer */
+
+footer nav.grid_4 .list-of-links {
+	display:none!important;
+}
+
+input[type="text"] {
+	width:40%!important;
+}
+
+.buttonsubmit {
+	width:100%;
+}
+
+footer .grid_8 {
+	width:100%!important;
+}
+
+#footer .grid_8 p {
+    padding:3% 0%;
+}
+
+/* Acitiviteiten */
+
+header#header {
+
+	position: relative!important;
+}
+
+section.page-hero {
+	display:none;
+}
+
+/* Acitiviteiten Category Nav */
+
+section#activiteiten ul#category li {
+	width:100%;
+	padding-bottom:20px;
+
+}
+
+#category li {
+	padding:0!important;
+}
+
+#category li a {
+	padding:20px!important;
+}
+
+/* Tour */
+

@@ -1,0 +1,743 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ********************************************************************************* */
+
+/*
+
+	0.	CSS Reset & Clearfix
+	1.	Document Setup (body, common classes, vertical rhythm, structure etc)
+	3.	Header Styles
+	4.	Navigation & Menus
+	5.	Main Content Styles
+	6.	Post Content Styles
+	7.	Comments
+	8.	Pagination
+	9.	Footer Styles
+	10.	Page Templates
+	11.	Widgets
+	12.	Sortcode Styles
+	13. Media Querys
+	
+*/
+	
+/* ********************************************************************************* */
+
+
+
+/* ********************************************************************************* */
+/* 0.	CSS Reset & Clearfix */
+/* ********************************************************************************* */
+
+@import url(smartphone.css) screen and (max-width: 640px);
+
+@import url(style.css) screen and (max-width: 1024px);
+
+
+
+* {
+	margin: 0;
+	padding: 0;
+    border: 0 none;
+	outline: 0;
+	list-style: none;
+	font-size: 100%;
+}
+
+img, a img { 
+	max-width: 100%;
+	vertical-align: middle; 
+}
+
+:focus { outline:0; }
+
+article, aside, figure, figure img, hgroup, footer, header, nav, section {
+	display: block; /* HTML5 Resets for older browsers */ 
+}
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; } .clearfix { display: inline-block; } /* Hide from IE Mac \*/ .clearfix { display: block; } /* End hide from IE Mac */ .none { display: none; } /* End Clearfix */
+
+
+/* Mozilla based browsers */
+::-moz-selection {
+	background-color: #000;
+	color: #FFF;
+}
+
+/* Works in Safari */
+::selection {
+	background-color: #000;
+	color: #FFF;
+}
+
+
+/* ********************************************************************************* */
+/* 1.	Document Setup */
+/* ********************************************************************************* */
+
+a { text-decoration: none; transition: color 0.1s linear; -moz-transition: color 0.1s linear; -webkit-transition: color 0.1s linear; -o-transition: color 0.1s linear; }
+a:link, a:visited { color: #000; }
+a:hover, a:active {	color: #e00029; }
+
+p { line-height: 24px; }
+p a { text-decoration: underline; }
+
+strong {
+    font-family: "Open Sans", Arial, sans-serif;
+    font-weight: 700;
+	text-transform: uppercase;
+}
+
+.centered { text-align: center; }
+.colorize { color: #e00029; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "PT Serif", Arial, serif;
+    font-weight: normal;
+    margin: 14px 0;
+}
+h1 {
+    font-size: 1.857em; /* 26px / 16px */
+    line-height: 36px; /* Can be removing if required - 28px default */
+}
+h2 {
+    font-size: 2.375em; /* 38px / 16px */
+    line-height: 24px;
+	margin: 14px 0 60px;
+	position: relative;
+}
+h3 {
+	font-size: 1.750em; /* 28px / 16px */
+    line-height: 20px;
+	position: relative;
+}
+h2:after, h3:after {
+	content: "-";
+	overflow: hidden;
+
+	height: 1px;
+	width: 160px;
+	margin-left: -80px;
+	text-indent: 100%;
+	background: #191919;
+
+	position: absolute;
+	top: 60px;
+	left: 50%;
+}
+h3:after { top: 40px; }
+
+h4 {
+    font-size: 1.125em; /* 18px / 16px */
+    line-height: 20px;
+}
+
+
+hr {
+	height: 1px;
+	width: 100%;
+	float: none;
+	background: #000;
+	border: none;
+}
+
+
+/* ********************************************************************************* */
+/* 	2.	Body Setup */
+/* ********************************************************************************* */
+
+body {
+	margin: auto;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 1.000em; /* 16px = 100% */
+	color: #191919;
+	-webkit-font-smoothing: none; -webkit-font-smoothing: subpixel-antialiased; -webkit-font-smoothing: antialiased;
+}
+
+#container { z-index: 1; }
+
+
+/* ********************************************************************************* */
+/* 	3.	Header Styles */
+/* ********************************************************************************* */
+
+header#header {
+	height: auto;
+	width: 100%;
+	margin: 0 auto;
+	background: #FFF;
+	
+	position: absolute;
+	z-index: 100;
+}
+
+header#header .grid_12 { margin: 0 10px; }
+header#header.alt { background: rgba(0, 0, 0, 0.8); }
+
+#logo {
+	width: 300px;
+	float: left;
+	position: relative;
+	line-height: 110px;
+}
+
+#logo img { vertical-align: middle; }
+
+
+/* ********************************************************************************* */
+/* 	4.	Navigation & Menus */
+/* ********************************************************************************* */
+
+#primary-navwrapper {
+	height: auto;
+	margin: 42px 0;
+	float: right; /* convertible */
+    font-family: "Open Sans", Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+ul#listnav { }
+
+#listnav li {	
+	width: auto; /* depending on the padding */
+	float: left;
+	display: inline;
+	padding: 0 15px;
+}
+#listnav li:last-of-type { padding: 0 0 0 15px; }
+
+#listnav li a {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	line-height: 35px;
+}
+
+#listnav li a { text-decoration: none; }
+#listnav li a:link, #listnav li a:visited { color: #191919; }
+.alt #listnav li a:link, .alt #listnav li a:visited { color: #FFF; }
+#listnav li a:hover, #listnav li a:active, #listnav li a#current, 
+.alt #listnav li a:hover, .alt #listnav li a:active, .alt #listnav li a#current { color: #e00029; }
+
+#primary-navwrapper a#nav-toggle { display: none; }
+
+
+/*Styles for screen 600px and lower*/
+/*Smartphone*/
+@media only screen and (max-width : 640px) {
+	#primary-navwrapper { width: 100%; } 
+	ul#listnav { display: none; }
+	
+	#listnav li {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+
+	#primary-navwrapper a#nav-toggle {
+		display: inline-block;
+		background-color: #FFF;
+		width: 100%;
+	}
+}
+
+
+/* ********************************************************************************* */
+/* 5.	Main Content Styles */
+/* ********************************************************************************* */
+
+#container, section {
+	height: auto;
+	width: 100%;
+}
+
+#container > section {
+	padding: 60px 0;
+	position: relative;
+	z-index: 8;
+}
+
+section.alt { 
+	background: #191919;
+	color: #FFF;	
+}
+#container > section:first-of-type { padding: 0;	}
+#container > section:last-of-type { padding: 60px 0 120px;	}
+section.alt h2:after { background: #FFF; }
+
+section header { margin: 0 auto 40px; }
+section > .container_12 > header { margin: 0 160px 40px; }
+section a.button { margin: 40px 0 0;}
+
+
+#hero {
+	height: auto;
+	max-height: 680px;
+	position: relative;
+	overflow: hidden;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+#hero img { width: 100%; }
+
+
+#featured { 
+	padding: 0 0 60px!important; 
+	background: #191919 url('../images/zoetelievegerritje.png') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+#featured .grid_4, #featured .grid_8 { margin: 0 auto; }
+#featured .grid_4 { width: 320px; }
+#featured .grid_8 { width: 640px; }
+
+#featured .post.custom {
+	position: relative;	
+	overflow: hidden;
+}
+
+#featured .post.custom section {
+	height: 100%;
+	width: 100%;
+	padding: 60px 30px 30px;
+	
+	background: rgba(0, 0, 0, .6);
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#featured .post.custom:hover section { 
+	background: rgba(0, 0, 0, .8);
+	-webkit-transition: opacity 0.2s ease-in-out 0s;
+	-moz-transition: opacity 0.2s ease-in-out 0s;
+	-o-transition: opacity 0.2s ease-in-out 0s;
+	transition: opacity 0.2s ease-in-out 0s;
+}
+
+#featured .post.custom figure img { 
+	-webkit-transition: -webkit-transform 0.25s ease-in-out,opacity 0.25s ease-in-out;
+	-moz-transition: transform 0.25s ease-in-out,opacity 0.25s ease-in-out;
+	-o-transition: transform 0.25s ease-in-out,opacity 0.25s ease-in-out;
+	transition: transform 0.25s ease-in-out,opacity 0.25s ease-in-out;
+}
+#featured .post.custom:hover img { 
+	transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);
+	-ms-transform:scale(1.1,1.1); 
+}
+
+#featured .post.feature section {
+	padding: 30px;
+
+	background: #222;
+	color: #FFF;
+}
+
+#featured h2:after {
+	width: 80px;
+	margin-left: -40px;
+	background: #FFF;
+}
+
+
+#deelnemers {
+	background: #191919 url('../images/goudendraak.png') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+ul.list-of-links {
+	padding: 10px 0;
+	float: left;
+	font-size: 14px;
+	text-transform: uppercase;
+	position: relative;
+}
+.list-of-links li {	
+	width: auto; /* depending on the padding */
+	float: none; /* default left */
+	display: inline-block; /* default inline */
+	padding: 0 10px;
+}
+
+.list-of-links li a {
+	display: block;
+	text-align: center;
+}
+
+.list-of-links li a:link, .list-of-links li a:visited { color: #808080; }
+.list-of-links li a:hover, .list-of-links li a:active {	color: #e00029; }
+
+
+.page-hero {
+	height: 430px;
+	overflow: hidden;
+}
+.page-hero img { 
+	width: 100%; 
+	display: block;
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+#activiteiten {
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;		
+}
+
+#activiteiten #category { float: none; }
+
+#category {
+	padding: 10px 0;
+	float: left;
+	font-size: 16px;
+	text-transform: uppercase;
+	position: relative;
+}
+#category li {	
+	width: auto; /* depending on the padding */
+	float: none; /* default left */
+	display: inline-block; /* default inline */
+	padding: 0 20px;
+}
+
+#category li a.current-cat {
+	padding: 10px 18px;
+	background: #000;
+	color: #FFF;
+	font-weight: 700;
+}
+
+#activiteiten .accordion { display: inline-block; }
+#activiteiten .accordion header {
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px 0;
+	float: left;
+	
+	border-bottom: 1px solid #000;
+	position: relative;
+	cursor: pointer;
+}
+#activiteiten .accordion header h4 {
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 22px;
+}
+#activiteiten .accordion header:before, #activiteiten .accordion header .close:before {
+	content:"";
+	background: #000 url(../images/toggle.png) center left no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 26px;
+}
+#activiteiten .accordion header.close h4 a { 
+	color: #e00029;
+	font-weight: 700;
+}
+
+#activiteiten .accordion header:before { background: #000 url(../images/toggle.png) center left no-repeat; }
+
+#activiteiten .accordion header.close:before { background: #000 url(../images/toggle.png) center right no-repeat; }
+
+#activiteiten article { float: left; }
+#activiteiten .accordion article p { 
+	padding: 30px 0;
+	
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+#activiteiten .accordion article figure { margin: 40px 0; }
+#activiteiten .accordion .hide-list { display: none; }
+#activiteiten h4 { 
+	padding: 0 0 0 50px;
+	text-transform: uppercase; 
+}
+
+#tour h3:after, #service h3:after {
+	width: 80px;
+	margin-left: -40px;
+	background: #191919;
+}
+
+#tour article h4 {
+    font-family: "PT Serif", Arial, serif;
+	font-size: 22px;
+	line-height: 28px;
+}
+#tour-single article h4 { line-height: 32px; }
+#tour-single article header { margin: 0; }
+
+
+#overons .container_12 > figure { margin: 0 10px 40px; }
+#overons ul.list-of-links { 
+	padding: 20px 0;
+	float: none; 
+}
+
+
+/* ********************************************************************************* */
+/* 	6.	Post Content Styles */
+/* ********************************************************************************* */
+
+.post { 
+	height: auto; 
+	float: left;
+	display: inline-block;
+}
+.post a.button { margin: 10px auto; }
+
+.post figure {}
+.post section {
+	padding: 30px 0;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.post section .byline { 
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+
+/* ********************************************************************************* */
+/* 	9.	Footer Styles */
+/* ********************************************************************************* */
+
+footer#footer {
+	padding: 20px 0;
+	background: #000;	
+	color: #808080;
+}
+#footer .submit { 
+	margin: 0 auto; 
+	background: none;
+	color: #FFF;
+	border: 1px solid #808080;
+}
+
+#footer .grid_8 p {
+    font-family: "PT Serif", Arial, serif;
+	text-transform: uppercase;
+}
+
+#footer ul.list-of-links { float: right; }
+#footer ul.list-of-links li { padding: 0 0 0 20px; }
+
+#footer .list-of-links:after {
+	content: "-";
+	overflow: hidden;
+
+	height: 1px;
+	width: 120px;
+	text-indent: 100%;
+	background: #FFF;
+
+	position: absolute;
+	top: 50px;
+	left: 50%;
+}
+#footer .custom .list-of-links:after { display: none; }
+
+#footer .custom { margin: 0 10px; }
+#footer .grid_4.custom ul.list-of-links { padding: 0; }
+
+#footer a:link, a:visited { color: #808080; }
+#footer a:hover, a:active {	color: #FFF; }
+
+#footer input[type="text"], textarea {
+    padding: 14px 20px;
+	float: left;
+	background: none;
+    font-family: "PT Serif", Arial, serif;
+	color: #808080;
+	border: 1px solid #808080;
+}
+
+#footer input[type="text"] { width: 410px; }
+
+
+#footer input[type="text"]:hover, textarea:hover { border: 1px solid #FFF; }
+#footer input[type="text"]:focus, textarea:focus { border: 1px solid #FFF; }
+
+
+/* ********************************************************************************* */
+/* 	10.	Page Templates */
+/* ********************************************************************************* */
+
+a.button, .submit {
+	margin: 10px auto;
+	padding: 14px 30px;
+	display: inline-block;
+	border: 2px solid #FFF;
+
+    font-family: "PT Serif", Arial, serif;
+	text-align: center;
+	cursor: pointer;
+	opacity: .6;
+}
+.alt .button.primary { 
+	color: #FFF;
+	border: 2px solid #FFF; 
+}
+.button.primary { 
+	color: #191919;
+	border: 2px solid #000; 
+}
+.button.primary:hover { 
+	color: #e00029; 
+	opacity: 1;
+}
+
+
+form {
+	height: auto;
+	width: 100%;
+	float: left;
+}
+form p { 
+	margin: 0 0 10px;
+	float: left;
+}
+
+label {
+	padding: 20px;
+	float: left;
+	font-size: 14px;
+}
+
+input[type="text"], textarea {
+    padding: 14px 20px;
+	float: left;
+	background: none;
+    font-family: "PT Serif", Arial, serif;
+	color: #808080;
+	border: 1px solid #000;
+}
+
+input[type="text"] { width: 410px; }
+select { 
+	width: 300px; 
+    font-family: "PT Serif", Arial, serif;
+}
+input[type="checkbox"] {
+	margin: 20px 0;
+	float: left;	
+}
+textarea {
+	height: 200px;
+	max-height: 200px;
+	width: 410px;
+	max-width: 410px;
+}
+input[type="text"].custom:nth-of-type(1) { 
+	width: 100px; 
+	margin: 0 10px 0 0;
+}
+input[type="text"].custom:nth-of-type(2) { width: 70px; }
+
+
+input[type="text"]:hover, textarea:hover { border: 1px solid #CCC; }
+input[type="text"]:focus, textarea:focus { border: 1px solid #CCC; }
+
+.required { color: #ff0000; }
+
+form .submit {
+	color: #191919;
+	border: 2px solid #000;
+	background: none; 
+}
+form .submit:hover {
+	background: #000;
+	color: #FFF;
+	opacity: 1;
+}
+
+
+.cal {
+	width: 420px;
+	display: block;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-size: 14px;
+	line-height: 34px;
+	padding: 14px 20px;
+	
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+
+	float: left;
+	border: 1px solid #000;
+	
+	display: table;
+    table-layout: fixed;
+    width: 100%;
+
+}
+
+.cal td, .cal th { clear: both; }
+.cal td {
+    display: table-cell;
+	text-align: center;
+}
+
+.cal-title { font-family: "PT Serif", Arial, serif; }
+.cal-days {
+	font-weight: 700;
+	color: #191919;
+	text-transform: uppercase;
+}
+.days {}
+.days:hover, .days:focus {
+	color: #FFF;
+	background: #e00029;
+	cursor: pointer;
+}
+
+.off { color: #C2C2C2; }
+
+.event {
+    color: #191919;
+	border: 2px solid #000;
+}
+.event:hover, .event:focus {
+    color: #FFF;
+	background: #000;
+}
+.fader{
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+} 
+ 
+.fader .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    background: red;
+}
+ 
+.fader img.slide{
+    height: auto;
+}
